@@ -9,9 +9,6 @@ import java.util.Arrays;
 import static junit.framework.TestCase.assertTrue;
 import static org.junit.Assert.assertEquals;
 
-/**
- * Created by indigo on 21.08.2015.
- */
 public abstract class DatabaseManagerTest {
 
     private DatabaseManager manager;

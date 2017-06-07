@@ -56,7 +56,7 @@ public class InMemoryDatabaseManager implements DatabaseManager {
         validateTable(tableName);
 
         for (int index = 0; index < freeIndex; index++) {
-            if (data[index].get("id") == id) {
+            if ((int)data[index].get("id") == id) {
                 data[index].updateFrom(newValue);
             }
         }

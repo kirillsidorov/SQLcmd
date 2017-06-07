@@ -28,12 +28,20 @@ public class IntegrationTest {
         in = new ConfigurableInputStream();
 
         System.setIn(in);
+
         System.setOut(new PrintStream(out));
+
+        //clear db
+        //in.add("connect|sqlcmd|postgres|postgres");
+        //in.add("clear|user");
+        //in.add("exit");
+        //Main.main(new String[0]);
+        //out.reset();
     }
 
     @Test
     public void testHelp() {
-        // given
+        // given11
         in.add("help");
         in.add("exit");
 
@@ -196,6 +204,7 @@ public class IntegrationTest {
     public void testFindAfterConnect() {
         // given
         in.add("connect|sqlcmd|postgres|postgres");
+        in.add("clear|user");
         in.add("find|user");
         in.add("exit");
 
@@ -208,6 +217,8 @@ public class IntegrationTest {
                 // connect
                 "Успех!\r\n" +
                 "Введи команду (или help для помощи):\r\n" +
+                "Таблица user была успешно очищена.\r\n"+
+                "Введи команду (или help для помощи):\r\n"+
                 // find|user
                 "--------------------\r\n" +
                 "|name|password|id|\r\n" +
